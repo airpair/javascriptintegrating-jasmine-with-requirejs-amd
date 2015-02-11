@@ -1,0 +1,1 @@
+This repo is for JavaScript — Integrating Jasmine with RequireJs (AMD) by Gerard Sans. And it's one of the first ever git backed AirPair posts :{}
