@@ -1,10 +1,15 @@
-This article will go through the changes you have to do to migrate your code and the default test runner `SpecRunner.html` to use RequireJS. We will cover:
+
+This post will go through the changes you have to do to migrate your code and the default test runner `SpecRunner.html` to use RequireJS. We will cover:
 
 *   Changes to the default Jasmine setup
 *   RequireJS configuration
 *   Changes to our libraries and specs.
 
-Source code available at [gsans/jasmine-require-bootstrap](https://github.com/gsans/jasmine-require-bootstrap) (Github).
+I don't want to get into why you should use RequireJS or not, but if you are still curious, head to the links at the bottom and decide by yourself. 
+
+Obviously, if you are already using RequireJS in your application, it also makes sense to use it in your tests.
+
+Source code is available at [gsans/jasmine-require-bootstrap](https://github.com/gsans/jasmine-require-bootstrap) (Github).
 
 ## Jasmine Default Setup
 
@@ -193,5 +198,7 @@ We can now run our tests taking advantage of RequireJS helper functions making t
 ### Resources
 
 [Angular&#8202;—&#8202;Unit Testing with Jasmine](https://medium.com/angularjs-meetup-south-london/angular-unit-testing-with-jasmine-24795a44998e)
+
+[Why use RequireJS?](https://gist.github.com/desandro/4686136)
 
 ![](https://d262ilb51hltx0.cloudfront.net/max/1000/1*VEsYW1ANSic04En6nx7yHw.png)
