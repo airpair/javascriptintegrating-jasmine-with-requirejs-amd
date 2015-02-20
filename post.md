@@ -1,12 +1,12 @@
-This article will go through the changes you have to do to migrate your code and the default test runner _SpecRunner.html_ to use RequireJs. We will cover:
+This article will go through the changes you have to do to migrate your code and the default test runner `SpecRunner.html` to use RequireJS. We will cover:
 
 *   Changes to the default Jasmine setup
-*   RequireJs configuration
+*   RequireJS configuration
 *   Changes to our libraries and specs.
 
 Source code available at [gsans/jasmine-require-bootstrap](https://github.com/gsans/jasmine-require-bootstrap) (Github).
 
-### Jasmine Default Setup
+## Jasmine Default Setup
 
 Find the steps to setup Jasmine [here](https://github.com/jasmine/jasmine). We are going to use this folder structure.
 
@@ -17,9 +17,9 @@ Find the steps to setup Jasmine [here](https://github.com/jasmine/jasmine). We a
 └───vendor
 ```
 
-Your _SpecRunner.html_ should look similar to this:
+Your `SpecRunner.html` should look similar to this:
 
-```
+```markup
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -46,9 +46,9 @@ Your _SpecRunner.html_ should look similar to this:
 </html>
 ```
 
-This is how _my-library.js_ and _my-library.specs.js_ look like
+This is how `my-library.js` and `my-library.specs.js` look:
 
-```
+```javascript
 // my-library.js
 var myLibrary = (function() {
   function sayHello() {
@@ -74,11 +74,11 @@ If you have node installed in your machine you can use _http-server_ to run the 
 ![](https://d262ilb51hltx0.cloudfront.net/max/1000/1*-hFjUCMZbrknJQ2UJ0vW5w.png)
 SpecRunner.html output
 
-#### RequireJs Setup
+## RequireJS Setup
 
-In order to use RequireJs we will have to change our previous _SpecRunner.html_ page to the following:
+In order to use RequireJS we will have to change our previous _SpecRunner.html_ page to the following:
 
-```
+```markup
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -95,13 +95,13 @@ In order to use RequireJs we will have to change our previous _SpecRunner.html_ 
 ```
 
 We removed all external scripts files and only left _require.js_.
-> Note how we omitted the&nbsp;*.js* extension for *main.js*. This is how RequireJs identifies files by default.
+> Note how we omitted the&nbsp;*.js* extension for *main.js*. This is how RequireJS identifies files by default.
 
-#### RequireJs configuration file&#8202;—&#8202;main.js
+### RequireJS configuration file&#8202;—&#8202;main.js
 
 In [_main.js_](http://requirejs.org/docs/api.html#config) we will set the configuration options to load all dependencies and bootstrap Jasmine.
 
-```
+```javascript
 // Requirejs Configuration Options
 require.config({
   // to set the default folder
@@ -126,13 +126,13 @@ require.config({
 
 > We used jasmine-boot as an alias for boot.js
 
-### RequireJs Bootstrap
+### RequireJS Bootstrap
 
 This setup will start with jasmine-boot identifier. It has two dependencies: jasmine and jasmine-html. As jasmine-html has jasmine as a dependency it will then proceed to load jasmine.js, then jasmine-html.js and finally boot.js as it was doing on our original runner.
 
 > We use **_require() _**to load dependencies before running our code.
 
-```
+```javascript
 require(['jasmine-boot'], function () {
   require(['my-library.specs'], function(){
     //trigger Jasmine
@@ -146,11 +146,11 @@ The previous code will load all _jasmine-boot_ dependencies and continue with ou
 
 Once all script files are loaded we trigger _window.onload()_ as Jasmine hooks into this event to initialise its engine.
 
-#### Changes to our library
+### Changes to our library
 
 In order to create our library we will wrap it using define. As we don’t have any dependencies it will be empty. Note also how we added a return statement at the end, this is so it can be used on other modules via parameters without polluting the global _window_ object.
 
-```
+```javascript
 define([], function(){
  
   var myLibrary = (function() {
@@ -168,11 +168,11 @@ define([], function(){
 
 > We use *define()* to define our libraries. This can load dependencies and return an instance for others to use.
 
-#### Changes to our specs
+### Changes to our specs
 
 In order to migrate our specs we will repeat the same as we did before. In this case we do have a dependency as we need to load my-library.js in order to run our tests.
 
-```
+```javascript
 define(['my-library'], function(myLibrary){
  
   describe("my-library", function(){
@@ -188,7 +188,7 @@ define(['my-library'], function(myLibrary){
 
 The *myLibrary* parameter will get the instance returned by our library new definition.
 
-We can now run our tests taking advantage of RequireJs helper functions making the testing experience more enjoyable.
+We can now run our tests taking advantage of RequireJS helper functions making the testing experience more enjoyable.
 
 ### Resources
 
