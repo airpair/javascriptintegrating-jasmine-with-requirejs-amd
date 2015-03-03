@@ -196,6 +196,7 @@ The *myLibrary* parameter will get the instance returned by our library new defi
 We can now run our tests taking advantage of RequireJS helper functions making the testing experience more enjoyable.
 
 ### Resources
+[Angular&#8202;—&#8202;Using RequireJS (AMD)](https://medium.com/angularjs-meetup-south-london/angular-using-requirejs-amd-528358208f84)
 
 [Angular&#8202;—&#8202;Unit Testing with Jasmine](https://medium.com/angularjs-meetup-south-london/angular-unit-testing-with-jasmine-24795a44998e)
 
