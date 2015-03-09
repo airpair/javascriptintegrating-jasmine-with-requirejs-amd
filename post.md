@@ -203,3 +203,5 @@ We can now run our tests taking advantage of RequireJS helper functions making t
 [Why use RequireJS?](https://gist.github.com/desandro/4686136)
 
 ![](https://d262ilb51hltx0.cloudfront.net/max/1000/1*VEsYW1ANSic04En6nx7yHw.png)
+
+![](https://ga-beacon.appspot.com/UA-60512998-1/airpair/javascriptintegrating-jasmine-with-requirejs-amd)
