@@ -4,11 +4,18 @@ This post will go through the changes you have to do to migrate your code and th
 *   RequireJS configuration
 *   Changes to our libraries and specs.
 
-I don't want to get into why you should use RequireJS or not, but if you are still curious, head to the links at the bottom and decide by yourself. 
+Source code is available at [gsans/jasmine-require-bootstrap](https://github.com/gsans/jasmine-require-bootstrap) (Github).
+
+## RequireJS introduction
+
+RequireJS is a JavaScript file and module loader that implements the Asynchronous module definition (AMD). Mainly it allows you to
+
+- load resources on demand
+- define dependencies that must load before a module is executed.
+
+RequireJS will shine if you are working in large teams or if your dependency tree is complex enough. Besides, you also get other cool features as: synchronous/asynchronous loading and lazy loading with promises. Once you have done the initial setup you will be able to use intrincate dependencies with ease.
 
 Obviously, if you are already using RequireJS in your application, it also makes sense to use it in your tests.
-
-Source code is available at [gsans/jasmine-require-bootstrap](https://github.com/gsans/jasmine-require-bootstrap) (Github).
 
 ## Jasmine Default Setup
 
