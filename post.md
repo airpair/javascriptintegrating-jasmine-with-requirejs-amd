@@ -13,7 +13,7 @@ RequireJS is a JavaScript file and module loader that implements the Asynchronou
 - load resources on demand
 - define dependencies that must load before a module is executed
 
-RequireJS will shine if you are working in large teams or if your dependency tree is complex enough. Besides, you also get other cool features as: synchronous/asynchronous loading and lazy loading with promises. Once you have done the initial setup you will be able to use intrincate dependencies with ease.
+RequireJS will shine if you are working in large teams or if your dependency tree is complex enough. Besides, you also get other cool features such as: synchronous/asynchronous loading and lazy loading with promises. Once you have done the initial setup you will be able to use intrincate dependencies with ease.
 
 Obviously, if you are already using RequireJS in your application, it also makes sense to use it in your tests.
 
@@ -105,7 +105,7 @@ In order to use RequireJS we will have to change our previous _SpecRunner.html_ 
 </html>
 ```
 
-We removed all external scripts files and only left _require.js_.
+We removed all external script files and only left _require.js_.
 > Note how we omitted the&nbsp;*.js* extension for *main.js*. This is how RequireJS identifies files by default.
 
 ### RequireJS configuration file&#8202;—&#8202;main.js
@@ -159,7 +159,7 @@ Once all script files are loaded we trigger _window.onload()_ as Jasmine hooks i
 
 ### Changes to our library
 
-In order to create our library we will wrap it using define. As we don’t have any dependencies it will be empty. Note also how we added a return statement at the end, this is so it can be used on other modules via parameters without polluting the global _window_ object.
+In order to create our library we will wrap it using define. As we don’t have any dependencies, it will be empty. Note also how we added a return statement at the end, this is so it can be used on other modules via parameters without polluting the global _window_ object.
 
 ```javascript
 define([], function(){
